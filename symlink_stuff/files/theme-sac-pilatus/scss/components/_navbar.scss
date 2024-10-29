@@ -9,7 +9,7 @@ $color-level-4: $navbar-content-color;
 $color-level-1-active: $black;
 $color-level-1-hover: $dark;
 $color-level-2-active: $black;
-$color-level-2-hover: $dark;
+$color-level-2-hover: #f1f1f1;
 
 // Toggler
 #header .close-header-navigation-dropdown {
@@ -48,9 +48,7 @@ $color-level-2-hover: $dark;
             > li.nav-item {
               ////////////////// megamenu hack
               position: inherit !important;
-              //margin: 0 .5rem;
               padding: 0 0 0 6px;
-              //height: $navbar-height;
               position: relative;
               display: flex;
               align-items: center;
@@ -127,7 +125,6 @@ $color-level-2-hover: $dark;
             li.nav-item {
               padding-right: .75rem;
             }
-
           }
 
           .dropdown-menu {
@@ -157,39 +154,27 @@ $color-level-2-hover: $dark;
           }
 
           .dropdown-menu ul.level_2 {
-
             min-height: 200px;
             border: 0;
-            border-top: 1px solid #eee;
-            //border-bottom: 1px solid #ccc;
             padding-top: 1rem;
             padding-bottom: 1rem;
             z-index: 1054; // put the menu below the bootstrap modal backdrop, which has has a z-index of 1055
             ////////////////// megamenu hack
             width: 100% !important;
-            // new
-            border-top: 0;
-
-            //width: calc(100vw - 80px) !important;
             opacity: .97;
-            //left:40px;
-            //right:40px;
             margin-top: 1px;
             background-color: $navbar-dropdown-color;
 
             > li > a:before, > li > strong:before {
-              content: "";
-              //background: red;
               background-size: contain;
               width: 15px;
-              //height: 15px;
               display: inline-block;
               vertical-align: middle;
               margin-right: 10px;
             }
 
             > li.active > strong:before {
-              color: $color-level-2-active !important;
+              // color: $color-level-2-active !important;
             }
 
             > li > a > span:hover, > li > a > strong:hover {
@@ -204,7 +189,7 @@ $color-level-2-hover: $dark;
             > li {
               width: 350px;
               line-height: 2;
-              //border-top: 1px solid $gray-300;
+              border: 0;
               padding: 0 $spacer-x;
               margin-bottom: 2rem;
               @include transition(background-color);
@@ -215,11 +200,10 @@ $color-level-2-hover: $dark;
                 @media screen and (min-width: 1600px) {
                   font-size: $font-size-lg !important;
                 }
-                font-weight: 600;
+                font-weight: lighter;
                 @include transition(color);
                 display: block;
                 margin-bottom: 0.5rem;
-                @include icon-before("\f138"); // circle-right
                 text-decoration: none !important;
 
                 &:before {
@@ -228,47 +212,32 @@ $color-level-2-hover: $dark;
               }
             }
 
-            > li.page-container {
-              > a {
-                border-bottom: 1px solid $color-level-2;
-              }
-
-              > strong {
-                border-bottom: 1px solid $color-level-2-active;
-              }
-
-              > a, > strong, > span {
-                @include icon-before("\f13a"); // circle-down
-              }
-            }
-
             > li.page-container:hover {
               > a, > strong, > a > span {
                 color: $color-level-2 !important;
               }
             }
-
           }
 
           ul.level_3 {
             > li {
               line-height: 2.25;
+              border-top: 1px solid #48a5d4;
+              padding: 0;
+
               @include icon-before("\f105", white); //angle-right
               &:before {
                 margin-top: 0;
               }
-
-              //border-top: 1px solid #444;
-              padding: 0;
 
               > a, > strong, > a > span {
                 color: $color-level-3;
                 font-size: 0.875rem !important;
                 text-decoration: none;
                 @media screen and (min-width: 1600px) {
-                  font-size: 1.125rem !important;
+                  font-size: 1.0rem !important;
                 }
-                font-weight: normal;
+                font-weight: lighter;
                 @include transition(color);
 
                 &:before {
@@ -278,7 +247,7 @@ $color-level-2-hover: $dark;
             }
 
             > li.active > strong {
-              color: $color-level-2-active !important;
+              // color: $color-level-2-active !important;
             }
 
             > li > a > span:hover, > li > a > strong:hover {
@@ -303,13 +272,9 @@ $color-level-2-hover: $dark;
                 @include transition(color);
               }
             }
-
           }
         }
       }
     }
   }
 }
-
-
-
