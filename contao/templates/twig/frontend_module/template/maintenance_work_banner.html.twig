@@ -1,0 +1,15 @@
+<div id="maintenanceWorkBanner" class="d-none">
+    {{ insert_tag('insert_article::300')|raw }}
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const banner = document.getElementById('maintenanceWorkBanner');
+        const referenceNode = document.querySelector('.header-navbar-row-0');
+
+        if(referenceNode){
+            // Insert the new element after the reference element
+            referenceNode.insertAdjacentElement('afterend', banner);
+            banner.classList.remove('d-none');
+        }
+    });
+</script>
